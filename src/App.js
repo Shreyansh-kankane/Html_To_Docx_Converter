@@ -1,5 +1,7 @@
 import './App.css';
 import { useRef, useState } from 'react';
+import Footer from './components/footer';
+import Services from './components/Services';
 
 import Lottie from 'lottie-react';
 import animationData from './Animation - 1697390967309.json';
@@ -92,6 +94,9 @@ function App() {
         </div>
 
       </div>}
+      
+      <Services/>
+      <Footer/>
     </>
   );
 }
