@@ -29,6 +29,8 @@ body {
 .container {
   margin-top: 25px;
   height: 35vh;
+  padding-bottom: 25px;
+  border-bottom: #cccccc 1px solid;
 }
 
 .innercontainer {
@@ -106,8 +108,8 @@ body {
 
 .downBtn {
   width: 80%;
-  background-color: white;
-  color: black;
+  background-color: #0D6EFD;
+  color: white;
   text-align: center;
   border-radius: 10px;
   padding: 10px;
@@ -117,12 +119,12 @@ body {
   cursor: pointer;
   margin-bottom: 10px;
 }
-.downBtn a{
+.downBtn a {
   text-decoration: none;
   color: inherit;
 }
 .downBtn:hover {
-  background-color: black;
+  background-color: rgba(5, 2, 206, 0.944);
   color: white;
 }
 
@@ -150,3 +152,23 @@ body {
   gap: 10px;
 }
 
+.transformer {
+  padding: 70px;
+}
+
+.transformer-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.transformer-description {
+  margin-left: 10px;
+  padding: 30px;
+  text-align: left;
+}
+
+ol li {
+  margin: 17px 0px;
+  padding-left: 15px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./index.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <nav class='navbar'>
+        <a><h1 class='brandName'>docxGenerator</h1></a>
+    </nav>
+
+      <h1 class='heading'>HTML to DOCX Converter</h1>
+     
+        <div class='container'>
+          <div class='innercontainer'>
+            <form class="form">
+              <label for="files" class="label">
+                <div class="labelCont">
+                  <img  class="docxlogo"src="./docx.png"></img>
+                  <div class="btn">
+                    <h4>Upload File</h4>
+                  </div>
+                </div>
+              </label>
+              <input id ="files"type="file" name='htmlfile' class="hidden"></input>
+            </form>
+          </div>
+        </div>
+        <div style="display: flex; justify-self: center;"><p id ="error" class="hidden error"></p></div>
+      
+</body>
+<script src="./index.js"></script>
+</html>
