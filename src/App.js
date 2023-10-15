@@ -3,7 +3,9 @@ import { useRef, useState } from 'react';
 
 import Lottie from 'lottie-react';
 import animationData from './Animation - 1697390967309.json';
-
+import html5 from './html5.svg';
+import arrow from './a.svg';
+import docx from './docx-file.svg';
 function App() {
 
   const fileInput = useRef(null);
@@ -51,22 +53,41 @@ function App() {
       </nav>
       {!loading && !state && <h1 className='heading'>HTML to DOCX Converter</h1>}
 
-      {!loading && !state && <div className='container'>
-        <div className='innercontainer'>
-          <form className="form" onSubmit={handleSubmit}>
-            <label htmlFor="files" className="label">
-              <div className="labelCont">
-                <img className="docxlogo" src="docx.png" alt='**'></img>
-                <div className="btn">
-                  <h4>Upload File</h4>
-                </div>
-              </div>
-            </label>
-            <input onChange={handleSubmit} ref={fileInput} id="files" type="file" name='htmlfile' className="hidden"></input>
+      {!loading && !state &&
+        <>
+          <div className='container'>
+            <div className='innercontainer'>
+              <form className="form" onSubmit={handleSubmit}>
+                <label htmlFor="files" className="label">
+                  <div className="labelCont">
+                    <img className="docxlogo" src="docx.png" alt='**'></img>
+                    <div className="btn">
+                      <h4>Upload File</h4>
+                    </div>
+                  </div>
+                </label>
+                <input onChange={handleSubmit} ref={fileInput} id="files" type="file" name='htmlfile' className="hidden"></input>
 
-          </form>
-        </div>
-      </div>}
+              </form>
+            </div>
+          </div>
+          <div className='transformer-container'>
+            <div className='transformer'>
+              <img src={html5}></img>
+              <img src={arrow}></img>
+              <img src={docx}></img>
+            </div>
+            <div className='transformer-description'>
+                <h2>How to convert to Docx from HTML:</h2>
+                <ol>
+                  <li>Upload your file to our online HTML to Docx converter.</li>
+                  <li>The tool will instantly upload and transform the file into a Docx file.</li>
+                  <li>Download the Docx file to your device.</li>
+                </ol>
+            </div>
+          </div>
+        </>
+      }
 
       <div className=''>
         {loading && <div className="flex flex-col flex-1 justify-center items-center">

@@ -29,6 +29,8 @@ body {
 .container {
   margin-top: 25px;
   height: 35vh;
+  padding-bottom: 25px;
+  border-bottom: #cccccc 1px solid;
 }
 
 .innercontainer {
@@ -117,7 +119,7 @@ body {
   cursor: pointer;
   margin-bottom: 10px;
 }
-.downBtn a{
+.downBtn a {
   text-decoration: none;
   color: inherit;
 }
@@ -150,3 +152,23 @@ body {
   gap: 10px;
 }
 
+.transformer {
+  padding: 70px;
+}
+
+.transformer-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.transformer-description {
+  margin-left: 10px;
+  padding: 30px;
+  text-align: left;
+}
+
+ol li {
+  margin: 17px 0px;
+  padding-left: 15px;
+}
