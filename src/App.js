@@ -1,14 +1,17 @@
 import './App.css';
 import { useRef, useState } from 'react';
-
+// import DocViewer, { DocViewerRenderers } from 'react-doc-viewer';
 import Lottie from 'lottie-react';
 import animationData from './Animation - 1697390967309.json';
 import html5 from './html5.svg';
 import arrow from './a.svg';
 import docx from './docx-file.svg';
+import docxDownload from './DocxDownload.svg'
+
 function App() {
 
   const fileInput = useRef(null);
+  const downloadRef = useRef(null);
   const [state, setState] = useState(false);
   const [url, setUrl] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -30,7 +33,7 @@ function App() {
     }
     setError(null);
     setLoading(true);
-    setFilename(file.name.replace('.html', 'docx'));
+    setFilename(file.name.replace('.html', '.docx'));
     const formData = new FormData();
     formData.append("file", file);
 
@@ -44,6 +47,10 @@ function App() {
       setLoading(false);
       setUrl(window.URL.createObjectURL(new Blob([responseBlob])));
     }
+  }
+  const downloadHandler = () => {
+    console.log("download");
+    downloadRef.current.click();
   }
 
   return (
@@ -78,12 +85,12 @@ function App() {
               <img src={docx}></img>
             </div>
             <div className='transformer-description'>
-                <h2>How to convert to Docx from HTML:</h2>
-                <ol>
-                  <li>Upload your file to our online HTML to Docx converter.</li>
-                  <li>The tool will instantly upload and transform the file into a Docx file.</li>
-                  <li>Download the Docx file to your device.</li>
-                </ol>
+              <h2>How to convert to Docx from HTML:</h2>
+              <ol>
+                <li>Upload your file to our online HTML to Docx converter.</li>
+                <li>The tool will instantly upload and transform the file into a Docx file.</li>
+                <li>Download the Docx file to your device.</li>
+              </ol>
             </div>
           </div>
         </>
@@ -101,11 +108,13 @@ function App() {
       </div>
 
       {state && !loading && <div className='pdContainer'>
-        <iframe src={`https://docs.google.com/gview?url=https://firebasestorage.googleapis.com/v0/b/expensetrackerreact-680cb.appspot.com/o/Assignmen1.docx?alt=media&token=25afdcf7-3410-4fb9-b9ac-1509cab6870b&_gl=1*1pl0b85*_ga*NTQwMTk1MDI3LjE2OTczNjMxNTM.*_ga_CW55HF8NVT*MTY5NzM5MjcyMC4yLjEuMTY5NzM5MzAwMC40MS4wLjA`} frameBorder="0" style={{ height: "85vh", width: "60vw", margin: "0px 30px", padding: "0px 50px 0px 20px" }}>
-        </iframe>
+        <div style={{ width: '60vw',textAlign: 'center'}}>
+          <img onClick={downloadHandler} src={docxDownload} style={{ height: "85vh"}}></img>
+        </div>
+
         <div className='downloadOption'>
           <h3>{filename}</h3>
-          <button className='downBtn'><a href={url} download="filename.docx">Download</a></button>
+          <button className='downBtn'><a ref={downloadRef} href={url} download="filename.docx">Download</a></button>
           <button className='set' onClick={handleReset}>
             <img src="synchronize.png" alt="img" height={30} width={30} />
             <p>Start Over</p>

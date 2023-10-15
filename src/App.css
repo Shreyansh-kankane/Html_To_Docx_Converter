@@ -108,8 +108,8 @@ body {
 
 .downBtn {
   width: 80%;
-  background-color: white;
-  color: black;
+  background-color: #0D6EFD;
+  color: white;
   text-align: center;
   border-radius: 10px;
   padding: 10px;
@@ -124,7 +124,7 @@ body {
   color: inherit;
 }
 .downBtn:hover {
-  background-color: black;
+  background-color: rgba(5, 2, 206, 0.944);
   color: white;
 }
 
