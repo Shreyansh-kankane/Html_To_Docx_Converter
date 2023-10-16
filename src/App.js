@@ -7,6 +7,9 @@ import html5 from './html5.svg';
 import arrow from './a.svg';
 import docx from './docx-file.svg';
 import docxDownload from './DocxDownload.svg'
+import Navbar from './components/navbar';
+import Services from './components/Services';
+import Footer from './components/footer';
 
 function App() {
 
@@ -55,10 +58,8 @@ function App() {
 
   return (
     <>
-      <nav className='navbar'>
-        <a href='/' style={{ 'color': 'black', 'textDecoration': 'none' }}><h1 className='brandName'>docxGenerator</h1></a>
-      </nav>
-      {!loading && !state && <h1 className='heading'>HTML to DOCX Converter</h1>}
+      <Navbar/>
+      {!loading && !state && <h1 className='heading' style={{fontWeight:'bold',fontSize:'3rem'}}>HTML to DOCX Converter</h1>}
 
       {!loading && !state &&
         <>
@@ -85,11 +86,11 @@ function App() {
               <img src={docx}></img>
             </div>
             <div className='transformer-description'>
-              <h2>How to convert to Docx from HTML:</h2>
+              <h1 style={{fontWeight: 'bold'}}>How to convert to Docx from HTML:</h1>
               <ol>
-                <li>Upload your file to our online HTML to Docx converter.</li>
-                <li>The tool will instantly upload and transform the file into a Docx file.</li>
-                <li>Download the Docx file to your device.</li>
+                <li style={{fontSize: '2rem'}}>Upload your file to our online HTML to Docx converter.</li>
+                <li style={{fontSize: '2rem'}}>The tool will instantly upload and transform the file into a Docx file.</li>
+                <li style={{fontSize: '2rem'}}>Download the Docx file to your device.</li>
               </ol>
             </div>
           </div>

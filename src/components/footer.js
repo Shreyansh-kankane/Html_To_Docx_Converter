@@ -6,7 +6,7 @@ const Footer = () => {
       <section className="footer" id="footer">
         <div className="box-container">
           <div className="box">
-            <i className="fas fa-paper-plane"></i>Travel With AI
+            <i className="fas fa-paper-plane"></i>Convert on the Go
             <p>
               Clean, fast and secure
             </p>
@@ -69,7 +69,7 @@ const Footer = () => {
       </section>
 
       <div className="credit">
-        Created By <span>Rishabh Bhargava</span> | All rights reserved!
+            Made with ❤️ By <span>Bug Blasters</span> | All rights reserved!
       </div>
     </div>
   );
